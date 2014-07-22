@@ -27,7 +27,7 @@
 
 class Hover {
 		public:
-			void Hover(uint8_t addr = 0x42);
+			Hover(uint8_t addr = 0x42);
 		    void begin(int ts, int mclr);
 		    void setRelease(int ts);
 		    boolean getStatus(int ts);
