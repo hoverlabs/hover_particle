@@ -21,7 +21,7 @@
 #include "Hover.h"
 
 Hover::Hover(uint8_t addr) {
- _i2caddr = addr;
+ 	_i2caddr = addr;
 }
 
 void Hover::begin(ts, rst) {
