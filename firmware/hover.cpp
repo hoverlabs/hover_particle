@@ -18,7 +18,7 @@
 #  v1.0
 #  ===========================================================================*/
 
-#include "hover.h"
+#include "Hover.h"
 
 void Hover::begin(int ts, int rst) {
 	Wire.begin();
