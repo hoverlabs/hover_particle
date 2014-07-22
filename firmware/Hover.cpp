@@ -54,7 +54,7 @@ byte Hover::getEvent(void) {
 	byte event;
 	int c = 0;
     Wire.requestFrom((uint8_t)_i2caddr, (uint8_t)18);    // request 20 bytes from slave device at 0x42
-    while(WIRE.available())    // slave may send less than requested
+    while(Wire.available())    // slave may send less than requested
     {     
 		data = WIRE.read(); // receive a byte as character
 		if (c == 10 && data > 1) {
