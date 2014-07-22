@@ -58,15 +58,15 @@ byte Hover::getEvent(void) {
     {     
 		data = WIRE.read(); // receive a byte as character
 		if (c == 10 && data > 1) {
-			event = ('B00000001' << (data-1)) | 'B00100000';
+			event = (0b00000001 << (data-1)) | 0b00100000;
 			return event;
 		}
 		if (c == 14 && data > B11111) {
-			event = ((data & B11100000) >> 5) | B01000000 ;
+			event = ((data & 0b11100000) >> 5) | 0b01000000 ;
 			return event;
 		}
 		if (c == 15 && data > 0) {
-			event = (((data & B0011) << 3) | B01000000);
+			event = (((data & 0b0011) << 3) | 0b01000000);
 			return event;
 		}
         c++;
@@ -78,38 +78,38 @@ String Hover::getEventString(byte eventByte) {
 	//Serial.println("inside string fcn");
 	//return "Test";
 	//Serial.println(eventByte);
-    if (eventByte == B00100010) {
+    if (eventByte == 0b00100010) {
         //Serial.println("Right swipe");
 		return "Right Swipe";
-    } else if (eventByte == B00100100) {
+    } else if (eventByte == 0b00100100) {
         //Serial.println("Left swipe"); 
 		return "Left Swipe";
 
-    } else if (eventByte == B00101000) {
+    } else if (eventByte == 0b00101000) {
         //Serial.println("Up swipe");  
 		return "Up Swipe";
 		
-    } else if (eventByte == B00110000) {
+    } else if (eventByte == 0b00110000) {
         //Serial.println("Down swipe"); 
 		return "Down Swipe";
 		
-    } else if (eventByte == B01000001) {
+    } else if (eventByte == 0b01000001) {
         //Serial.println("Tap south");
 		return "Tap South";
 		
-    } else if (eventByte == B01000010) {
+    } else if (eventByte == 0b01000010) {
         //Serial.println("Tap West");
 		return "Tap West";
 		
-    } else if (eventByte == B01010000) {
+    } else if (eventByte == 0b01010000) {
         //Serial.println("Tap Center");
 		return "Tap Center";
 		
-    } else if (eventByte == B01001000) {
+    } else if (eventByte == 0b01001000) {
         //Serial.println("Tap East"); 
 		return "Tap East";
 		
-    } else if (eventByte == B01000100) {
+    } else if (eventByte == 0b01000100) {
         //Serial.println("Tap NORTH");     
 		return "Tap North";
 		
