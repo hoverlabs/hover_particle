@@ -1,3 +1,6 @@
+#ifndef _HOVER
+#define _HOVER
+
 /*  ===========================================================================
 #  This is the library for Hover. 
 #  
@@ -17,6 +20,7 @@
 #  For questions and comments, email us at support@gearseven.com
 #  v1.0
 #  ===========================================================================*/
+
 
 #include "Hover.h"
 
