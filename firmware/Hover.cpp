@@ -20,6 +20,10 @@
 
 #include "Hover.h"
 
+Hover::Hover(uint8_t addr) {
+ _i2caddr = addr;
+}
+
 void Hover::begin(ts, rst) {
 	Wire.begin();
 	pinMode(ts, INPUT);    //Used by TS line on MGC3130
