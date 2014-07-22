@@ -20,7 +20,7 @@
 
 #include "Hover.h"
 
-void Hover::begin(int ts, int rst) {
+void Hover::begin(ts, rst) {
 	Wire.begin();
 	pinMode(ts, INPUT);    //Used by TS line on MGC3130
 	pinMode(rst, OUTPUT);    //Used by TS line on MGC3130

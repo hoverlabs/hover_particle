@@ -24,10 +24,7 @@
 
 #include "Hover.h"
 
-namespace Hover 
-{
-	class Pin
-    {
+class Hover {
 		public:
 		    Hover(uint8_t addr = 0x42);
 		    void begin(int ts, int mclr);
@@ -37,7 +34,6 @@ namespace Hover
 		    String getEventString(byte eventByte);
 		private:
 			uint8_t _i2caddr;
-	};
-}
+};
 
 #endif
