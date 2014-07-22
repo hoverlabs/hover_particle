@@ -1,0 +1,7 @@
+{
+  "name": "Hover",
+  "author": "Emran Mahbub, Jonathan Li <support@gearseven.com>",
+  "license": "BSD",
+  "version": "1.0.0",
+  "description": "Hover is a development kit that lets you control your hardware projects with gestures and touch"
+}
