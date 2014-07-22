@@ -22,7 +22,8 @@
 #ifndef _HOVER
 #define _HOVER
 
-#include "Hover.h"
+// TEMPORARY UNTIL the stuff that supports the code above is deployed to the build IDE
+#include "application.h"
 
 class Hover {
 		public:
