@@ -5,7 +5,7 @@ int ts = D3;
 int reset = D2;
 
 Hover hover = Hover();
-byte event;
+byte eventtype;
 
 void setup() {
     Serial.begin(9600);
@@ -20,10 +20,10 @@ void loop(void) {
   if (hover.getStatus(ts) == 0) {
     
     //Get the event over i2c and print it
-    event = hover.getEvent();
+    eventtype = hover.getEvent();
     
     //This section can be commented out if you don't want to see the event in text format
-    output_string = hover.getEventString(event);
+    output_string = hover.getEventString(eventtype);
     if (output_string != ""){
       Serial.print(event,BIN);
       Serial.println(" = " + output_string);
