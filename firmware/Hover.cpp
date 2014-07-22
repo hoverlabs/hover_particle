@@ -25,7 +25,7 @@ Hover::Hover(uint8_t addr) {
 }
 
 void Hover::begin(int ts, int rst) {
-	Wire.begin();
+	WIRE.begin();
 	pinMode(ts, INPUT);    //Used by TS line on MGC3130
 	pinMode(rst, OUTPUT);    //Used by TS line on MGC3130
 	digitalWrite(rst, LOW);
@@ -58,7 +58,7 @@ byte Hover::getEvent(void) {
     {     
 		data = WIRE.read(); // receive a byte as character
 		if (c == 10 && data > 1) {
-			event = (B00000001 << (data-1)) | B00100000;
+			event = ('B00000001' << (data-1)) | 'B00100000';
 			return event;
 		}
 		if (c == 14 && data > B11111) {
