@@ -25,7 +25,7 @@ Hover::Hover(uint8_t addr) {
 }
 
 void Hover::begin(int ts, int rst) {
-	WIRE.begin();
+	Wire.begin();
 	pinMode(ts, INPUT);    //Used by TS line on MGC3130
 	pinMode(rst, OUTPUT);    //Used by TS line on MGC3130
 	digitalWrite(rst, LOW);
@@ -53,7 +53,7 @@ byte Hover::getEvent(void) {
 	byte data;
 	byte event;
 	int c = 0;
-    WIRE.requestFrom((uint8_t)_i2caddr, (uint8_t)18);    // request 20 bytes from slave device at 0x42
+    Wire.requestFrom((uint8_t)_i2caddr, (uint8_t)18);    // request 20 bytes from slave device at 0x42
     while(WIRE.available())    // slave may send less than requested
     {     
 		data = WIRE.read(); // receive a byte as character
@@ -61,7 +61,7 @@ byte Hover::getEvent(void) {
 			event = (0b00000001 << (data-1)) | 0b00100000;
 			return event;
 		}
-		if (c == 14 && data > B11111) {
+		if (c == 14 && data > 0b11111) {
 			event = ((data & 0b11100000) >> 5) | 0b01000000 ;
 			return event;
 		}
