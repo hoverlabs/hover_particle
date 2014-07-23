@@ -1,5 +1,5 @@
 #include "application.h"
-#include "hover/Hover.h"
+#include "hover/hover.h"
 //Pin declarations for Hover
 int ts = D3;
 int reset = D2;
