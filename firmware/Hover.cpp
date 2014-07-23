@@ -17,7 +17,7 @@
 #  For questions and comments, email us at support@gearseven.com
 #  v1.0
 #  ===========================================================================*/
-
+#include "application.h"
 #include "Hover.h"
 
 Hover::Hover(uint8_t addr) {
