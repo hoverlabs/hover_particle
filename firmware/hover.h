@@ -17,7 +17,7 @@
 #
 #  SUPPORT
 #  For questions and comments, email us at support@gearseven.com
-#  v1.0
+#  v1.1
 #  ===========================================================================*/
 #ifndef _HOVER
 #define _HOVER
