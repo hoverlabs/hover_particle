@@ -69,9 +69,9 @@
 #
 *********************************************************************************************************/
 
+
 #include "application.h"
 #include "hover/hover.h"
-
 //Pin declarations for Hover
 int ts = D3;
 int reset = D2;
@@ -79,13 +79,23 @@ int reset = D2;
 Hover hover = Hover();
 byte eventtype;
 String outputstring;
-
+char *message = "my name is spark";
+int outputinteger;
 
 void setup() {
+    Spark.variable("mess", message, STRING);
+    //Spark.function("getEvent", sendEvent);
+
     Serial.begin(9600);
     delay(4000);
     Serial.print("Initializing Hover...please wait.");
     hover.begin(ts, reset);
+
+}
+
+void sendEvent(String eventMessage)
+{
+   Spark.publish("getEvent", eventMessage);    
 }
 
 void loop(void) {
@@ -103,6 +113,8 @@ void loop(void) {
     if (outputstring != ""){
       Serial.print(eventtype,BIN);
       Serial.println(" = " + outputstring);
+      String stringOne =  String(eventtype); 
+      sendEvent(stringOne);
     }
 
     
